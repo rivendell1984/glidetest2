@@ -19,7 +19,7 @@ jdk:
 env:
   matrix:
     - COMPONENT=unit
-    - COMPONENT=firebase 
+    - COMPONENT=firebase
       # TODO(#2738): Re-enable these when we find a fix.
       #    - COMPONENT=instrumentation ANDROID_TARGET=16
       #    - COMPONENT=instrumentation ANDROID_TARGET=17
@@ -28,6 +28,10 @@ env:
     - COMPONENT=instrumentation ANDROID_TARGET=21
     - COMPONENT=instrumentation ANDROID_TARGET=22
     - COMPONENT=samples
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y xvfb
 
 before_script:
   - ./scripts/travis_before_script.sh
