@@ -2,7 +2,7 @@
 
 set -e
 
-echo y | sdkmanager --licenses
+echo y | sdkmanager --update
 
 ./gradlew build \
   -x :samples:flickr:build \
